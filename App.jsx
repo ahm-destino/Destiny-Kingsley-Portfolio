@@ -373,17 +373,19 @@ export default function App() {
                         >
                             <div className="grid md:grid-cols-2">
                                 <div className="h-64 md:h-auto overflow-hidden bg-black flex items-center justify-center">
-                                    {isPlayingVideo && selectedProject.video ? (
+                                    {selectedProject.video ? (
                                         <video
                                             src={selectedProject.video}
-                                            controls
-                                            autoPlay
+                                            controls={isPlayingVideo}
+                                            autoPlay={!isPlayingVideo}
+                                            muted={!isPlayingVideo}
+                                            loop={!isPlayingVideo}
+                                            playsInline
                                             className="w-full h-full object-contain"
                                         />
                                     ) : (
                                         <img
-                                            // src={selectedProject.image.endsWith('.mp4') ? '/projects/forex-bot.png' : selectedProject.image}
-                                            src={selectedProject.video}
+                                            src={selectedProject.image}
                                             alt={selectedProject.title}
                                             className="w-full h-full object-cover"
                                         />

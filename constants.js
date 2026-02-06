@@ -49,8 +49,8 @@ export const PROJECTS = [
         solution: 'AI-powered assistant using LSTM models to predict trends with 78% accuracy and automated risk management.',
         tech: ['Python', 'TensorFlow', 'React', 'FastAPI'],
         impact: ['78% Prediction Accuracy', 'Saved users 80% of analysis time', 'Consistent 12% MoM returns'],
-        image: '/projects/Screen Recording 2025-11-14 182213.mp4',
-        video: '/projects/Screen Recording 2025-11-14 182213.mp4'
+        image: '/projects/trading-assistant.mp4',
+        video: '/projects/trading-assistant.mp4'
     },
     {
         id: 'nlp-customer-agent',
