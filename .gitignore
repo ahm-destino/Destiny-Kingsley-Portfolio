@@ -12,9 +12,7 @@ dist
 dist-ssr
 *.local
 metadata.json
-package-lock.json
-package.json
-vite.config.js
+
 
 # Editor directories and files
 .vscode/*
