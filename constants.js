@@ -38,8 +38,8 @@ export const PROJECTS = [
         solution: 'Web platform enabling online transactions, loan applications, and account management with AI fraud detection.',
         tech: ['React', 'Flask', 'PostgreSQL', 'Scikit-learn'],
         impact: ['Reduced office visits by 60%', 'Boosted user engagement by 40%', 'Streamlined loan approvals'],
-        image: '/projects/micro-finance.mp4',
-        video: '/projects/micro-finance.mp4'
+        image: import.meta.env.DEV ? '/projects/micro-finance.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/micro-finance.mp4`,
+        video: import.meta.env.DEV ? '/projects/micro-finance.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/micro-finance.mp4`
     },
     {
         id: 'ai-trading-assistant',
@@ -49,8 +49,8 @@ export const PROJECTS = [
         solution: 'AI-powered assistant using LSTM models to predict trends with 78% accuracy and automated risk management.',
         tech: ['Python', 'TensorFlow', 'React', 'FastAPI'],
         impact: ['78% Prediction Accuracy', 'Saved users 80% of analysis time', 'Consistent 12% MoM returns'],
-        image: '/projects/trading-assistant.mp4',
-        video: '/projects/trading-assistant.mp4'
+        image: import.meta.env.DEV ? '/projects/trading-assistant.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/trading-assistant.mp4`,
+        video: import.meta.env.DEV ? '/projects/trading-assistant.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/trading-assistant.mp4`
     },
     {
         id: 'nlp-customer-agent',
@@ -60,8 +60,8 @@ export const PROJECTS = [
         solution: 'Multilingual chatbot (English/Swahili/Yoruba) with real-time sentiment analysis and automated ticket routing.',
         tech: ['HuggingFace', 'Transformers', 'React', 'Flask'],
         impact: ['Cut support costs by 50%', '35% higher CSAT score', 'Zero downtime 24/7 support'],
-        image: '/projects/kohi-dojo.mp4',
-        video: '/projects/kohi-dojo.mp4'
+        image: import.meta.env.DEV ? '/projects/kohi-dojo.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/kohi-dojo.mp4`,
+        video: import.meta.env.DEV ? '/projects/kohi-dojo.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/kohi-dojo.mp4`
     },
     {
         id: 'veosense',
@@ -71,8 +71,8 @@ export const PROJECTS = [
         solution: 'Mobile AI app using CV and TTS to describe surroundings, read local currency, and guide users.',
         tech: ['OpenCV', 'TensorFlow Lite', 'React Native', 'AWS Polly'],
         impact: ['Guided 500+ users safely', '70% reduction in navigation errors', 'Localized for regional accents'],
-        image: '/projects/veosense.mp4',
-        video: '/projects/veosense.mp4'
+        image: import.meta.env.DEV ? '/projects/veosense.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/veosense.mp4`,
+        video: import.meta.env.DEV ? '/projects/veosense.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/veosense.mp4`
     },
     {
         id: 'abia-ticketing',
@@ -82,8 +82,8 @@ export const PROJECTS = [
         solution: 'Digital ticketing platform with AI-driven route optimization and eligibility verification.',
         tech: ['React', 'Node.js', 'MongoDB', 'Google Maps API'],
         impact: ['Wait times halved', '30% increase in ridership', 'Enhanced revenue transparency'],
-        image: '/projects/abia-transport.mp4',
-        video: '/projects/abia-transport.mp4'
+        image: import.meta.env.DEV ? '/projects/abia-transport.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/abia-transport.mp4`,
+        video: import.meta.env.DEV ? '/projects/abia-transport.mp4' : `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/video/upload/v1/portfolio/abia-transport.mp4`
     }
 ];
 
