@@ -8,6 +8,24 @@ import {
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { PROJECTS, SKILLS, TECH_STACK } from './constants';
 
+// Helper function to convert YouTube URL to embed URL
+const getEmbedUrl = (url) => {
+    if (!url) return null;
+    // Check if it's a YouTube URL
+    const youtubeMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+    if (youtubeMatch) {
+        return `https://www.youtube.com/embed/${youtubeMatch[1]}?autoplay=1&rel=0`;
+    }
+    // Return original URL for non-YouTube URLs (like Cloudinary)
+    return url;
+};
+
+// Check if URL is a YouTube URL
+const isYouTubeUrl = (url) => {
+    if (!url) return false;
+    return url.includes('youtube.com') || url.includes('youtu.be');
+};
+
 const Background = () => {
     return (
         <div className="mesh-bg">
@@ -126,14 +144,25 @@ const ProjectCard = ({ project, onClick }) => {
         >
             <div className="aspect-[16/10] overflow-hidden bg-zinc-900">
                 {project.video ? (
-                    <video
-                        src={project.video}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                    />
+                    isYouTubeUrl(project.video) ? (
+                        <iframe
+                            src={getEmbedUrl(project.video)}
+                            title={project.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
+                    ) : (
+                        <video
+                            src={project.video}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                        />
+                    )
                 ) : (
                     <img
                         src={project.image}
@@ -374,15 +403,26 @@ export default function App() {
                             <div className="grid md:grid-cols-2">
                                 <div className="h-64 md:h-auto overflow-hidden bg-black flex items-center justify-center">
                                     {selectedProject.video ? (
-                                        <video
-                                            src={selectedProject.video}
-                                            controls={isPlayingVideo}
-                                            autoPlay={!isPlayingVideo}
-                                            muted={!isPlayingVideo}
-                                            loop={!isPlayingVideo}
-                                            playsInline
-                                            className="w-full h-full object-contain"
-                                        />
+                                        isYouTubeUrl(selectedProject.video) ? (
+                                            <iframe
+                                                src={getEmbedUrl(selectedProject.video)}
+                                                title={selectedProject.title}
+                                                className="w-full h-full"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowFullScreen
+                                            />
+                                        ) : (
+                                            <video
+                                                src={selectedProject.video}
+                                                controls={isPlayingVideo}
+                                                autoPlay={!isPlayingVideo}
+                                                muted={!isPlayingVideo}
+                                                loop={!isPlayingVideo}
+                                                playsInline
+                                                className="w-full h-full object-contain"
+                                            />
+                                        )
                                     ) : (
                                         <img
                                             src={selectedProject.image}
